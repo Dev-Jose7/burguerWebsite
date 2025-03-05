@@ -3,6 +3,8 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+
 .home-section{
     width: 100%;
     height: 100vh;
@@ -783,11 +785,12 @@ input[type=date], input[type=text], input[type=email], input[type=file], input[t
     border: 2px solid black;
 }
 .list-cart{
+    display: none;
     position: absolute;
-    top: 62px;
-    right: 0;
-    width: 200px !important;
+    top: 75px;
+    width: 250px !important;
     background-color: #fff;
+    left: 82.5vw;
 }
 .ocultar{
     display: none;
