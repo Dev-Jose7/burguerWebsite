@@ -62,39 +62,49 @@
   </nav>
     <!-- nav section -->
      <!-- cart section -->
-     <h2 class="page-title text-center my-5 py-3" style="background-color: #ffc800;">PEDIDO EN PROCESO</h2>
-     <div class="page-content">
-        <div class="resumen-compra col-xxl-8 col-lg-8 col-md-8 col-sm-10 offset-xxl-2 offset-lg-2 offset-md-2 offset-sm-1">
-            <h5 class="mb-16"><span>Cliente!</span>Muchas Gracias por tu compra</h5>
-            <p>Orden #000</p>
-            <p class="mb-32">Estamos preparando tu pedido, pronto nos comunicaremos contigo para realizar la entrega.</p>
-            <div class="card my-5">
-              <div class="card-header">Resumen de tu compra</div>
-              <div class="row">
-                <div class="col-sm-6 mb-3 mb-sm-0">
-                  <div class="card">
-                    <div class="card-body">
-                      <h5 class="card-title">Special title treatment</h5>
-                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="card">
-                    <div class="card-body">
-                      <h5 class="card-title">Special title treatment</h5>
-                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                  </div>
-                </div>
+            <div class="row mt-4">
+              <div class="col-md-8 offset-md-2 text-center">
+                  <h2 class="fw-bold">¡Gracias por tu compra, <span class="cliente-nombre"></span>!</h2>
+                  <p class="fs-5">Tu pedido ha sido procesado exitosamente.</p>
               </div>
-              <div class="card-footer">
-                Card footer
+          </div>
+          
+          <div class="row mt-4">
+              <!-- Resumen de la Orden -->
+              <div class="col-md-6">
+                  <div class="card bg-warning text-dark shadow-lg">
+                      <div class="card-header text-center fw-bold">Resumen de la Orden</div>
+                      <div class="card-body">
+                          <table class="table table-bordered detalle-orden">
+                              <thead class="table-dark text-center">
+                                  <tr>
+                                      <th>Producto</th>
+                                      <th>Cantidad</th>
+                                      <th>Precio</th>
+                                  </tr>
+                              </thead>
+                              <tbody></tbody>
+                          </table>
+                      </div>
+                  </div>
               </div>
-            </div>
-            <button type="button" class="btn-gracias cus-btn dark w-100 mb-32">
+          
+              <!-- Totales -->
+              <div class="col-md-6">
+                  <div class="card bg-warning text-dark shadow-lg">
+                      <div class="card-header text-center fw-bold">Totales</div>
+                      <div class="card-body">
+                          <ul class="list-group">
+                              <li class="list-group-item bg-transparent"><strong>Subtotal:</strong> <span class="res-sub-total"></span></li>
+                              <li class="list-group-item bg-transparent"><strong>Descuento:</strong> <span class="promo"></span></li>
+                              <li class="list-group-item bg-transparent"><strong>Costo de Envío:</strong> <span class="valor-domi"></span></li>
+                              <li class="list-group-item bg-transparent fw-bold"><strong>Total a Pagar:</strong> <span class="total"></span></li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+          </div>
+            <button type="button" class="btn-gracias cus-btn dark w-100 mb-32 mt-5">
                 <span class="icon-wrapper">
                     <svg class="icon-svg icon-svg-copy" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                         <path d="M16.2522 11.9789C14.4658 10.1925 13.7513 6.14339 15.6567 4.23792M15.6567 4.23792C14.565 5.3296 11.4885 7.21521 7.91576 3.64246M15.6567 4.23792L4.34301 15.5516" stroke="#FCFDFD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -102,7 +112,7 @@
                 </span>
               ¿Realizar otra compra?
             </button>
-        </div>
+          </div>
      </div>
      <!-- cart section -->
    <!-- footer -->
@@ -173,6 +183,6 @@
    <a href="#" class="arrow"><i class="fa-solid fa-arrow-up"></i></a>
 
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="js/thankyou.js"></script>
+  <script src="js/thankyou.js"></script>
   </body>
 </html>

@@ -135,3 +135,4 @@ function updateLocalStorageCar(){
        addProduct(product)
     })
 }
+
