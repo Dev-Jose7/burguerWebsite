@@ -787,10 +787,15 @@ input[type=date], input[type=text], input[type=email], input[type=file], input[t
 .list-cart{
     display: none;
     position: absolute;
-    top: 75px;
     width: 250px !important;
+    top: 11.3vh;
+    right: 0;
+}
+
+.list-cart thead tr,
+.list-cart tbody tr,
+.list-cart tfoot tr{
     background-color: #fff;
-    left: 82.5vw;
 }
 .ocultar{
     display: none;

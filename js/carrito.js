@@ -1,16 +1,16 @@
 //global variables
-let botonProduct=document.querySelectorAll(".btn-product");
+let buttonProduct=document.querySelectorAll(".btn-product");
 let carCount=document.querySelector(".contar-pro");
 let count=0;
 let cartList=document.querySelector(".list-cart tbody");
 let counterProduct=document.querySelectorAll("tr");
-let carrito = document.querySelector(".carrito")
+let cart = document.querySelector(".carrito")
 
  document.addEventListener("DOMContentLoaded",()=>{
     updateLocalStorageCar();
  })
 //counter of the car
-botonProduct.forEach((btn,i)=>{
+buttonProduct.forEach((btn,i)=>{
     
     btn.addEventListener("click",()=>{
         count++;
@@ -22,7 +22,7 @@ botonProduct.forEach((btn,i)=>{
 });
 
 // Se registra evento de tipo click
-carrito.addEventListener("click", function(e){
+cart.addEventListener("click", function(e){
     // Si el documento en su propiedad display tiene como valor none o vacío (el DOM puede tenerlo así), se le cambiará el valor a block, si se vuelve a dar click la primer condición no se cumplirá y pasará a la segunda condición ya que es verdaderá por la primer condición y se procederá a ocultar
     if(document.querySelector(".list-cart").style.display == "" || document.querySelector(".list-cart").style.display == "none"){
         document.querySelector(".list-cart").style.display = "block"
@@ -34,16 +34,14 @@ carrito.addEventListener("click", function(e){
 
 //add products to the card
 function addProduct(product){
-
     
-
     let fila = document.createElement("tr");
     let position = cartList.children.length+1;
     fila.innerHTML=`
         <td> ${position}</td>
         <td><img src="${product.image}" width="70px"></img></td>
         <td>${product.name}</td>
-        <td>${product.price}</td>
+        <td> $${product.price}</td>
         <td> <span onclick="deleteProduct(${position})" class="btn btn-danger"">X</span> </td>
     `;
     cartList.appendChild(fila);
@@ -51,11 +49,12 @@ function addProduct(product){
 
 //function to add info in the car´s table
 function infoProduct(position){
-    let product=botonProduct[position].parentElement.parentElement.parentElement;
+    let product=buttonProduct[position].parentElement.parentElement.parentElement;
     let infoProductCar={
         name:product.querySelector("h3").textContent ,
         image:product.querySelector("img").src ,
-        price:product.querySelector("h5").textContent ,
+        price:product.querySelector("h5").textContent.split("$")[1] ,
+        quantity: 1
     }
     
     addProduct(infoProductCar)
