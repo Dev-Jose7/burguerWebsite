@@ -6,6 +6,7 @@ let totalElement = document.querySelector(".total");
 let deliveryElement = document.querySelector(".valor-domi");
 let deliverySelect = document.querySelector(".destino");
 let deliveryCost = 0; // Permite almacenar el valor del domicilio cada que se realice un cambio event "change"
+let btnSummary = document.querySelector(".btn-summary");
 
 document.addEventListener("DOMContentLoaded", () => {
     loadProductLocalStorage()
@@ -114,3 +115,22 @@ function summaryPurchase(){
     totalElement.textContent = total.toFixed(3)
    
 }
+
+// event to the checkout button to save the purchase summary 
+btnSummary.addEventListener("click", ()=>{
+    let products = JSON.parse(localStorage.getItem("productCar")) || [];
+    let resumen = {
+        "productos": products,
+        subtotal: subtotalElement.textContent,
+        discount: discountElement.textContent,
+        select: deliverySelect.value,
+        delivery: deliveryElement.textContent,
+        total: totalElement.textContent
+    };
+
+    localStorage.setItem("proSummary", JSON.stringify(resumen));
+
+    setTimeout(() => {
+        location.href = "checkout.html";
+    }, 100); 
+});
